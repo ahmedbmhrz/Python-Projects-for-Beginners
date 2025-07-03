@@ -1,5 +1,6 @@
 import random
 
+
 def roll_dice():
     while True:
         A = input("Roll the dice? (Y/N): ")
@@ -16,5 +17,6 @@ def roll_dice():
                 break
             case _:
                 print("Invalid, Please enter Y or N")
+
 
 roll_dice()
