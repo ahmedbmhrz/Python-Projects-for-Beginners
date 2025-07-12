@@ -1,14 +1,23 @@
+from termcolor import colored
+
+X = 'X'
+O = 'O'
+
 board = [
         [" ", " ", " "],
         [" ", " ", " "],
         [" ", " ", " "]
     ]
 
+def cell(mark):
+    color = 'red' if mark == X else 'blue'
+    return colored(mark, color)
+
 def print_board(board):
     line = "---+---+---"
     print(line)
     for row in board:
-        print(f' {row[0]} | {row[1]} | {row[2]} ')
+        print(f' {cell(row[0])} | {cell(row[1])} | {cell(row[2])} ')
         print(line)
 
 def check_win(board):
@@ -56,7 +65,7 @@ def get_move(current_player):
 
 def main():
  print_board(board)  
- current_player = "X"
+ current_player = X
 
  while True:
      get_move(current_player)
@@ -69,7 +78,7 @@ def main():
          print("it's a draw!")
          break
 
-     current_player = "O" if current_player == "X" else "X"
+     current_player = O if current_player == X else X
 
 
 
